@@ -11,17 +11,13 @@
 </div>
 
 @endif
-      <div dir="rtl" class="w-full flex justify-center px-5     h-screen ">
-      <form class=" w-96 h-96 shadow-xl rounded-lg  mt-6  p-5 pt-24" method="POST" action="{{route('storemail')}}">
+      <div dir="rtl" class="w-full flex justify-center   px-5  h-screen ">
+      <form class=" w-96 h-96 shadow-xl  mt-6   p-5 pt-24" method="POST" action="{{route('whatsappstore')}}">
         @method('PUT')
         @csrf
         <div class=" flex flex-col gap-2">
-          <p class=" font-medium text-sm">اكتب بريدك الالكتروني هنا</p>
-        <input name="email" placeholder="البريد الالكتروني" class=" border-2 border-green-400 rounded-md px-4 py-3" type="text" value="{{$patient->email}}" >
-        @error('email')
-        <div class=" text-red-500">{{ $message }}</div>
-    @enderror
-
+        <p class=" font-medium text-sm">اكتب واتساب هنا</p>
+        <input name="whatsapp" placeholder=" واتساب" value="{{$patient->whatsapp}}" class=" border-2 border-green-400 rounded-md px-4 py-3" type="text"  >
    <div class=" w-full flex justify-center"><input class=" cursor-pointer hover:bg-green-300 hover:scale-105 rounded-md px-8 py-4 bg-green-400 shadow-md " type="submit" value="اضافة" name="" id=""> </div>
 </div>
       </form>

@@ -7,7 +7,7 @@ console.log(btn)
 console.log(nav)
 btn.addEventListener('click',()=>{
     menu.classList.toggle('hidden')
-    nav.classList.toggle('pb-60')
+    nav.classList.toggle('pb-96')
     nav.classList.toggle('pt-8')
 
     

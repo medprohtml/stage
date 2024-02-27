@@ -12,7 +12,7 @@
     <a href="/" class=" absolute top-2 mt-5 ms-7 font-medium text-sm rounded-md bg-slate-300 px-5 py-2 shadow-md">العودة</a>
     
     
-    <form dir="rtl" method="POST" action="{{route('login')}}" class=" w-full p-32 flex flex-col gap-4  rounded-md   " >
+    <form dir="rtl" method="POST" action="{{route('login')}}" class=" w-full md:p-32 p-0   flex flex-col gap-4  rounded-md   " >
     @csrf
       <div class=" w-full flex justify-center mb-14 text-green-400 font-medium text-xl ">مرحبا بك</div>
     <div class=" gap-2 w-full p-1 flex flex-col">
@@ -27,7 +27,7 @@
      
 </div>
 </form>
- <div class=" w-full h-screen"><img class=" h-screen object-cover" src="storage/loginimage.jpg" alt=""></div>
+ <div class=" md:w-full hidden md:flex h-screen"><img class=" h-screen object-cover" src="storage/loginimage.jpg" alt=""></div>
 
 
 

@@ -26,6 +26,9 @@ Route::get('/logout', [App\Http\Controllers\loginpatient::class, 'logout'])->nam
 Route::get('/addmail', [App\Http\Controllers\index::class, 'addmail'])->name('addmail')->middleware('check');
 Route::PUT('/store', [App\Http\Controllers\index::class, 'store'])->name('storemail')->middleware('check');
 Route::post('/sendmail', [App\Http\Controllers\mailcl::class, 'mail'])->name('sendmail')->middleware('check');
+Route::get('/addwhatsapp', [App\Http\Controllers\index::class, 'addwhatsapp'])->name('addwhatsapp')->middleware('check');
+Route::PUT('/storewhatsapp', [App\Http\Controllers\index::class, 'whatsappstore'])->name('whatsappstore')->middleware('check');
+
 
 
 

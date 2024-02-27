@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    @vite('resources/css/app.css')
-   @vite(['resources/js/app.js'])
-
-
-</head>
-<body dir="rtl" >
-    <nav id="nav" class="   md:pb-0 md:pt-0   w-full  rounded-md flex justify-between px-6 h-16 shadow-xl items-center bg-slate-50  font-medium text-sm">
-        <h1 class="  logo font-extrabold text-lg text-green-500">CAMH </h1>
-      <p id="btn" class=" absolute left-9" >menu</p>
-        
-        <ul id="menu" class=" delay-200 transition-all hidden nav mt-64 md:mt-0 flex flex-col md:flex-row gap-3   md:flex md:gap-16 ">
-
-
-          <li  class=" px-5 py-3 bg-white shadow-md rounded-md ">انواع التحاليل</li>
-          <li class=" px-5 py-3 bg-white shadow-md rounded-md ">تواصل معنا</li>
-          <li class=" px-5 py-3 bg-white shadow-md rounded-md "><a href={{route('addmail',session('id'))}}> اضافة واتساب و بريد الكتروني</a> </li>
-          <li class=" px-5 py-3 bg-white shadow-md rounded-md "><a href={{route('logout')}}>تسجيل الخلروج</a> </li>
-
-        </ul>
-  
-      </nav>
- 
+@extends('layot.layot')
+   @section('content')
     <p class=" font-medium text-sm m-6"> مرحبا  {{$patient->nom}} {{$patient->prenom}}</p>
         @if(session('msj'))
         <div id="message" class=" top-16 transition-all delay-700  flex justify-center fixed w-full">
@@ -74,5 +47,4 @@
     <p>no re</p>
     @endforelse
 </div>
-</body>
-</html>
+@endsection
