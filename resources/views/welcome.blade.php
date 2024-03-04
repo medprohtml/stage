@@ -19,10 +19,12 @@
         </svg></p>
       <ul dir="rtl" id="menu" class=" delay-200  transition-all hidden nav mt-64 md:mt-0 flex flex-col md:flex-row gap-3   md:flex md:gap-16 ">
 
-        <li class=" px-5 py-3 text-white rounded-lg bg-green-600" ><a href="{{route('showpatinet')}}" >صفحة المسوول</a></li>
+        <li class=" px-5 py-3 text-white rounded-lg bg-green-600" ><a href="{{ route('login') }}" >صفحة المسوول</a></li>
         <li class=" px-5 py-3 text-white rounded-lg bg-green-600"><a  href="{{route('loginshow')}}" > نتائج التحاليل</a></li>
-        <li  class=" px-5 py-3 bg-white shadow-md rounded-md ">انواع التحاليل</li>
+        <li class="px-5 py-3 bg-white shadow-md rounded-md"><a href="{{ route('register') }}">صفحة</a></li>
+
         <li class=" px-5 py-3 bg-white shadow-md rounded-md ">تواصل معنا</li>
+        {{-- {{route('showpatinet')}} --}}
       </ul>
 
     </nav>
