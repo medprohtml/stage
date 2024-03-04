@@ -38,8 +38,16 @@ class index extends Controller
 }
     $patient=patient::find(session('id'));
    $patient->email=$request->email;
-   $patient->save();
-   return redirect()->route('addmail')->with('msj2','تمت اضافة  البريد الالكتلروني بنجاح') ;   
+   $patient->save(); 
+   $request->session()->put('testemail', $request->email);
+
+   if(session('testwhatsapp')=='default whatsapp'){
+    return redirect()->route('addwhatsapp');
+   }
+   else{
+    return redirect()->route('index');
+   }
+
  }
  public function addwhatsapp(){
    
@@ -49,7 +57,7 @@ class index extends Controller
  }
  public function whatsappstore(Request $request ){
    $validator = Validator::make($request->all(), [
-      'whatsapp' => 'required|email',
+      'whatsapp' => 'required',
   ], [
       'whatsapp.required' => 'يرجى إدخال واتساب ',
     
@@ -60,7 +68,9 @@ class index extends Controller
     $patient=patient::find(session('id'));
    $patient->whatsapp=$request->whatsapp;
    $patient->save();
-   return redirect()->route('addwhatsapp')->with('msj3','تمت اضافة الواتساب بنجاح') ;   
+   $request->session()->put('testwhatsapp', $request->whatsapp);
+
+   return redirect()->route('index');
  }
  
 

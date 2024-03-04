@@ -38,12 +38,17 @@ class loginpatient extends Controller
             $patient = patient::where('patientid', $password)->first();
             $dossier=dossier::where('patientid',$password)->get();
             $id = $patient->patientid;
-         
+            $email=$patient->email;
             session(['id'=>$id]);
-        
-        
-          
-             return redirect()->route('index');
+            session(['testemail'=>$email]);
+            session(['testwhatsapp'=>$patient->whatsapp]);
+            if($patient->email=='default email'){
+              return redirect()->route('addmail');
+            }
+              else{
+                return redirect()->route('index');
+              }
+             
           }
           else{
             return redirect()->route('loginshow');

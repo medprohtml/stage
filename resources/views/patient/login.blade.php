@@ -23,6 +23,7 @@
         <label for="">النسب</label>
     <input class=" w-full px-3 py-4 rounded-md border-2 border-green-400 " type="text" name="name" placeholder=" النسب">
     </div>
+    
      <div class=" w-full rounded-md flex justify-center items-center h-10 mt-8 bg-green-400 shadow-lg font-medium text-sm"><input class="" type="submit" value="تسجيل الدخول"></div>
      
 </div>
