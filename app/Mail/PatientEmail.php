@@ -28,7 +28,7 @@ class PatientEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'MOHAMED AZIZ',
+            subject: "Votre analyse est prête",
         );
     }
 

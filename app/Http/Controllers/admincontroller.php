@@ -17,7 +17,7 @@ class admincontroller extends Controller
 
   public function ajouterpatient(Request $request){
      $patient= patient::firstOrCreate(['patientid'=>$request->idp],[
-     'nom'=>$request->name,'prenom'=>$request->prenom,'email'=>'default email'
+     'nom'=>$request->name,'prenom'=>$request->prenom,'email'=>'default email','whatsapp'=>'default whatsapp'
      ]);
 
      $dossier=new dossier();

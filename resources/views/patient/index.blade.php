@@ -2,7 +2,7 @@
    @section('content')
     <p class=" font-medium text-sm m-6"> مرحبا  {{$patient->nom}} {{$patient->prenom}}</p>
         @if(session('msj'))
-        <div id="message" class=" top-16 transition-all delay-700  flex justify-center fixed w-full">
+        <div id="message" class=" top-16 transition-all delay-700 flex justify-center fixed w-full">
          <div class=" border-2 px-4 md:px-24 text-center ms-3 py-4 text-white font-medium text-sm bg-blue-500 shadow-2xl rounded-md ">
            {{ session('msj') }}
            
