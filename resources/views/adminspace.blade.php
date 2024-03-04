@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +18,12 @@
         <h1 class="text-2xl font-bold mb-4">Admin Dashboard</h1>
         <nav>
             <ul class="space-y-2">
-                <li><a href="#" class="block py-2 px-4">Dashboard</a></li>
-                <li><a href="#" class="block py-2 px-4">Users</a></li>
-                <li><a href="#" class="block py-2 px-4">Posts</a></li>
+               
+                <li><a href="{{route('showpatinet')}}" class="block w-full py-2 px-1">AJouter patient ou dossier</a></li>
+                @if(Auth::user()->Hasrole=="Admin")
+                <li><a href="{{route('addres')}}" class="block w-full py-2 px-1">AJouter responsable   </a></li>
+                @endif
+                
                 <!-- Add more navigation items as needed -->
             </ul>
         </nav>
@@ -28,12 +32,10 @@
     <!-- Main Content -->
     <main class="flex-1 p-6">
         <h2 class="text-2xl font-bold mb-4">Dashboard</h2>
+        <h1>hello {{Auth::user()->Hasrole}}</h1>
 
         <!-- Add Patient Button -->
-        <a href="{{ route('showpatient') }}"
-           class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-blue-300">
-            Add Patient
-        </a>
+       @yield('admin')
 
         <!-- Your main content goes here -->
 

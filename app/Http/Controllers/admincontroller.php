@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\dossier;
 use App\Models\patient;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 use Illuminate\Http\Request;
 
 class admincontroller extends Controller
@@ -27,5 +30,22 @@ class admincontroller extends Controller
      $dossier->Resultas=$result;
      $dossier->save();
  
+  }
+
+
+  public function addadmin(){
+    $users=User::all();
+    return view("admin.addres",['users'=>$users]);
+  }
+
+  public function addresstore(Request $request){
+    $admin=new User();
+     
+    $admin->name=$request->name;
+    $admin->email=$request->email;
+    $admin->Hasrole=$request->role;
+    $admin->password = Hash::make($request->pass);
+
+    $admin->save();
   }
 }
