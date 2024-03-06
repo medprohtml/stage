@@ -35,6 +35,7 @@ class admincontroller extends Controller
 
   public function addadmin(){
     $users=User::all();
+    
     return view("admin.addres",['users'=>$users]);
   }
 

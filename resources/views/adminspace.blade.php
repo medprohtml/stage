@@ -23,7 +23,11 @@
                 @if(Auth::user()->Hasrole=="Admin")
                 <li><a href="{{route('addres')}}" class="block w-full py-2 px-1">AJouter responsable   </a></li>
                 @endif
-                
+                <li><a href="{{route('patientlist.index')}}" class="block w-full py-2 px-1">Tout patients   </a></li>
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <input type="submit" value="Logout">
+                </form>
                 <!-- Add more navigation items as needed -->
             </ul>
         </nav>

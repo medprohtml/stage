@@ -34,7 +34,7 @@ Route::get('/addwhatsapp', [App\Http\Controllers\index::class, 'addwhatsapp'])->
 Route::PUT('/storewhatsapp', [App\Http\Controllers\index::class, 'whatsappstore'])->name('whatsappstore')->middleware('check');
 Route::get('/addres', [App\Http\Controllers\admincontroller::class, 'addadmin'])->name('addres');
 Route::post('/addres', [App\Http\Controllers\admincontroller::class, 'addresstore'])->name('addres');
-
+Route::resource('patientlist',App\Http\Controllers\patientlist::class);
 
 
 
